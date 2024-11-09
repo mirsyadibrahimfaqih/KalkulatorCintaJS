@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Cinta</title>
+    <style>
+        /* Styling halaman */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('https://images.unsplash.com/photo-1499728603263-13726abce5fd?fit=crop&w=1050&q=80') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        /* Container Kalkulator */
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: 300px;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Judul */
+        h2 {
+            color: #ff5e5e;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-shadow: 2px 2px 8px rgba(255, 94, 94, 0.5);
+        }
+
+        /* Input Text */
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+
+        /* Tombol */
+        button {
+            background-color: #ff5e5e;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 15px;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        /* Hover efek pada tombol */
+        button:hover {
+            background-color: #ff3d3d;
+            transform: translateY(-2px);
+        }
+
+        /* Hasil */
+        .result {
+            font-size: 1.3em;
+            color: #444;
+            margin-top: 20px;
+            font-weight: bold;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        /* Efek animasi */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Kalkulator Cinta ❤️</h2>
+        <input type="text" id="name1" placeholder="Nama pertama">
+        <input type="text" id="name2" placeholder="Nama kedua">
+        <button onclick="calculateLove()">Hitung Cinta</button>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        function calculateLove() {
+            const name1 = document.getElementById('name1').value.trim();
+            const name2 = document.getElementById('name2').value.trim();
+
+            if (name1 === '' || name2 === '') {
+                document.getElementById('result').textContent = 'Mohon isi kedua nama.';
+                return;
+            }
+
+            const lovePercentage = Math.floor(Math.random() * 51) + 50;
+            document.getElementById('result').textContent = 
+                `${name1} ❤️ ${name2} = ${lovePercentage}% cocok!`;
+        }
+    </script>
+</body>
+</html>
